@@ -96,3 +96,8 @@ async def get_doc_info(msg: Message, bot: Bot, state: FSMContext):
 @router.message(F.text == "🧬 Аптека")
 async def replenish(msg: Message):
     await msg.answer(text=lexicon_ru.pet_pharmacy_text)
+
+
+@router.message(F.text == "📞 Контакты")
+async def replenish(msg: Message):
+    await msg.answer(text=lexicon_ru.contacts_text)
