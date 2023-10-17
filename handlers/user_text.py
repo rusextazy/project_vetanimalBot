@@ -1,12 +1,9 @@
-from contextlib import suppress
 from aiogram import Router, F
 from aiogram.fsm.context import FSMContext
-from aiogram.types import Message, CallbackQuery
-from aiogram.exceptions import TelegramBadRequest
-from aiogram.utils.markdown import hide_link
+from aiogram.types import Message
 
-from keyboards import keyboards_menu, keyboards_doctor
-from lexicon import lexicon_ru, lexicon_doctor
+from keyboards import keyboards_menu
+from lexicon import lexicon_ru
 
 
 router = Router()
@@ -25,11 +22,11 @@ async def replenish(msg: Message):
     await msg.answer(text=lexicon_ru.pet_supplies_text, reply_markup=keyboards_menu.kb_menu_product)
 
 
-@router.message(F.text == "🧬 Аптека")
-async def replenish(msg: Message):
-    await msg.answer(text=lexicon_ru.pet_pharmacy_text)
-
-
 @router.message(F.text == "📞 Контакты")
 async def replenish(msg: Message):
     await msg.answer(text=lexicon_ru.contacts_text)
+
+
+@router.message(F.text == "💰 Price")
+async def replenish(msg: Message):
+    await msg.answer(text="В разработке")

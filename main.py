@@ -3,7 +3,7 @@ import logging
 
 from aiogram import Bot, Dispatcher
 from config_data.config import Config, load_config
-from handlers import user_commands, user_text, reception_text, veterinarian_text
+from handlers import user_commands, user_text, reception_text, veterinarian_text, pet_supplies_text
 
 logger = logging.getLogger(__name__)
 
@@ -26,6 +26,7 @@ async def main():
     dp.include_router(user_text.router)
     dp.include_router(reception_text.router)
     dp.include_router(veterinarian_text.router)
+    dp.include_router(pet_supplies_text.router)
 
     await bot.delete_webhook(drop_pending_updates=True)
     await dp.start_polling(bot)
