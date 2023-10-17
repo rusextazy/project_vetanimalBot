@@ -7,7 +7,6 @@ from aiogram.utils.markdown import hide_link
 from keyboards import keyboards_doctor
 from lexicon import lexicon_doctor
 
-
 router = Router()
 
 smiles = [
