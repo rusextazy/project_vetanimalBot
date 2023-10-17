@@ -29,4 +29,4 @@ async def replenish(msg: Message):
 
 @router.message(F.text == "💰 Price")
 async def replenish(msg: Message):
-    await msg.answer(text="В разработке")
+    await msg.answer(text=lexicon_ru.price_text)
